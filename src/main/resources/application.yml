@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+
+mysql:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: seohyun
+    password: 'dkagh'
+    jdbcUrl: 'jdbc:mysql://localhost:3306/music_friend'
+
