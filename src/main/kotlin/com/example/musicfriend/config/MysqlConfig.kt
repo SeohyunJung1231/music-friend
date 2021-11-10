@@ -17,8 +17,6 @@ import javax.sql.DataSource
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-    entityManagerFactoryRef = "EntityManagerFactory",
-    transactionManagerRef = "TransactionManager",
     basePackages = ["com.example.musicfriend.repository"]
 )
 class MysqlConfig {
@@ -31,7 +29,7 @@ class MysqlConfig {
     @Bean
     fun entityManagerFactory(
         builder: EntityManagerFactoryBuilder,
-        @Qualifier("dataSource") dataSource: DataSource
+        dataSource: DataSource
     ): LocalContainerEntityManagerFactoryBean {
         return builder
             .dataSource(dataSource)
