@@ -1,5 +1,6 @@
 package com.example.musicfriend.entity
 
+import javax.persistence.CascadeType
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.ManyToOne
@@ -12,6 +13,6 @@ class Music(
     val name: String,
     val youtube: String
 ) {
-    @ManyToOne
+    @ManyToOne(cascade = [CascadeType.ALL])
     lateinit var interest: Interest
 }

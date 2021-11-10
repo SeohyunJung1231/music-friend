@@ -16,18 +16,31 @@
 //
 //    @PostConstruct
 //    fun save() {
+//
+//        val memberInterest = MemberInterest(
+//            id = 1L
+//        )
+//
+//        val interest = Interest(
+//            id = 1L,
+//            title = "me"
+//        )
 //        val member = Member(
 //            id = 1L,
 //            nickname = "shu",
 //            memberInterest = listOf(
-//                MemberInterest(
-//                    id = 1L
-//                )
+//                memberInterest
 //            )
 //        )
 //        member.memberInterest.forEach {
 //            it.member = member
+//            it.interest = interest
 //        }
+//
+////        member.memberInterest.forEach {
+////            it.member = member
+////            it.interest = Interest(id = 1L, title = "me")
+////        }
 //        memberRepository.save(
 //            member
 //        )
