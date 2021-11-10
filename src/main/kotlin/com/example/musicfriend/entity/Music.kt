@@ -10,8 +10,8 @@ class Music(
     val id: Long,
 
     val name: String,
-    val youtube: String,
-
+    val youtube: String
+) {
     @ManyToOne
-    val interest: Interest?
-)
+    lateinit var interest: Interest
+}

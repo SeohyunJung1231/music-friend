@@ -8,10 +8,10 @@ import javax.persistence.ManyToOne
 class MemberInterest(
     @Id
     val id: Long,
+) {
+    @ManyToOne
+    lateinit var member: Member
 
     @ManyToOne
-    val member: Member, // 최소 한개 선택하도록 해야겠네
-
-    @ManyToOne
-    val interest: Interest
-)
+    lateinit var interest: Interest
+}

@@ -38,7 +38,7 @@ class MysqlConfig {
             .packages("com.example.musicfriend.entity")
             .properties(
                 mutableMapOf(
-                    "hibernate.dialect" to "org.hibernate.dialect.MySQL5Dialect",
+                    "hibernate.dialect" to "org.hibernate.dialect.MySQLDialect",
                     "hibernate.physical_naming_strategy" to "org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy",
                     "hibernate.hbm2ddl.auto" to "create-drop",
                     "hibernate.show-sql" to "true"
@@ -54,6 +54,4 @@ class MysqlConfig {
     ): PlatformTransactionManager {
         return JpaTransactionManager(entityManagerFactory)
     }
-
-
 }

@@ -12,5 +12,5 @@ class Interest(
     val title: String,
 
     @OneToMany
-    val musics: List<Music> = listOf()
+    val music: List<Music> = listOf()
 )

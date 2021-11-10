@@ -12,5 +12,5 @@ class Member(
     val nickname: String,
 
     @OneToMany
-    val interest: List<MemberInterest> = listOf()
+    val memberInterest: List<MemberInterest> = listOf()
 )

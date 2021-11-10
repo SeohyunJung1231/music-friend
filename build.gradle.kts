@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.5.6"
+    id("org.springframework.boot") version "2.5.0"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.5.31"
-    kotlin("plugin.spring") version "1.5.31"
-    kotlin("plugin.jpa") version "1.5.31"
+    kotlin("jvm") version "1.5.10"
+    kotlin("plugin.spring") version "1.5.10"
+    kotlin("plugin.jpa") version "1.5.10"
 }
 
 group = "com.example"
@@ -23,7 +23,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    runtimeOnly("mysql:mysql-connector-java")
+    implementation("mysql:mysql-connector-java:8.0.25")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
