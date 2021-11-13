@@ -38,7 +38,7 @@ class MysqlConfig {
                 mutableMapOf(
                     "hibernate.dialect" to "org.hibernate.dialect.MySQL5Dialect",
                     "hibernate.physical_naming_strategy" to "org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy",
-                    "hibernate.hbm2ddl.auto" to "create-drop",
+                    "hibernate.hbm2ddl.auto" to "create",
                     "hibernate.show-sql" to "true"
                 )
             )

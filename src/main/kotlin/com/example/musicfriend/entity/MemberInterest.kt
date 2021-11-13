@@ -1,18 +1,19 @@
 package com.example.musicfriend.entity
 
-import javax.persistence.CascadeType
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.ManyToOne
+import com.fasterxml.jackson.annotation.JsonIgnore
+import javax.persistence.*
 
 @Entity
-class MemberInterest(
+data class MemberInterest(
     @Id
-    val id: Long,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long = 0L
 ) {
+    @JsonIgnore
     @ManyToOne(cascade = [CascadeType.ALL])
     lateinit var member: Member
 
+    @JsonIgnore
     @ManyToOne(cascade = [CascadeType.ALL])
     lateinit var interest: Interest
 }
