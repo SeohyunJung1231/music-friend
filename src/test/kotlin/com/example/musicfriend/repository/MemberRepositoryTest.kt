@@ -14,7 +14,8 @@ class MemberRepositoryTest {
     private lateinit var memberRepository: MemberRepository
 
     @Test
-    fun saveTest() {
+//    @Rollback(false)
+    fun `db 에 잘 저장되는지 확인`() {
 
         val memberInterest = MemberInterest(
             id = 1L
