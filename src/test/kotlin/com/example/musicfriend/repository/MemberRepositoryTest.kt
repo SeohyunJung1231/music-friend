@@ -1,9 +1,9 @@
 package com.example.musicfriend.repository
 
+import com.example.musicfriend.entity.Composer
 import com.example.musicfriend.entity.Interest
 import com.example.musicfriend.entity.Member
 import com.example.musicfriend.entity.MemberInterest
-import com.example.musicfriend.entity.Music
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -24,15 +24,15 @@ class MemberRepositoryTest {
         val interest = Interest(
             id = 1L,
             title = "me",
-            music = listOf(
-                Music(
+            composers = listOf(
+                Composer(
                     id = 1L,
                     name = "sh",
                     youtube = "https://"
                 )
             )
         )
-        interest.music.forEach {
+        interest.composers.forEach {
             it.interest = interest
         }
         val member = Member(

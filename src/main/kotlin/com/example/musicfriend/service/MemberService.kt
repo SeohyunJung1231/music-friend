@@ -1,15 +1,14 @@
 package com.example.musicfriend.service
 
+import com.example.musicfriend.entity.Composer
 import com.example.musicfriend.entity.Interest
-import com.example.musicfriend.entity.Music
 import com.example.musicfriend.repository.InterestRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import javax.annotation.PostConstruct
 
 @Service
-class MemberService(
-) {
+class MemberService {
     @Autowired
     private lateinit var interestRepository: InterestRepository
 
@@ -19,13 +18,13 @@ class MemberService(
             Interest(
                 id = 1L,
                 title = "romantic",
-                music = listOf(
-                    Music(
+                composers = listOf(
+                    Composer(
                         id = 1L,
                         name = "Shumann",
                         youtube = "https://www.youtube.com/watch?v=UXYIpI1tck8"
                     ),
-                    Music(
+                    Composer(
                         id = 2L,
                         name = "Liszt",
                         youtube = "https://www.youtube.com/watch?v=H6UZhMl35lE&t=2179s"
@@ -35,13 +34,13 @@ class MemberService(
             Interest(
                 id = 2L,
                 title = "classic",
-                music = listOf(
-                    Music(
+                composers = listOf(
+                    Composer(
                         id = 3L,
                         name = "Beethoven",
                         youtube = "https://www.youtube.com/watch?v=cOj0qIRpA-E"
                     ),
-                    Music(
+                    Composer(
                         id = 4L,
                         name = "Mozart",
                         youtube = "https://www.youtube.com/watch?v=qX7J1HejyHU"
@@ -50,7 +49,7 @@ class MemberService(
             )
         )
         originalData.forEach { interest ->
-            interest.music.forEach { music ->
+            interest.composers.forEach { music ->
                 music.interest = interest
             }
             interestRepository.save(interest)

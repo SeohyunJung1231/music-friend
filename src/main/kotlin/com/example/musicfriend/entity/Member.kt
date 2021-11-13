@@ -1,17 +1,15 @@
 package com.example.musicfriend.entity
 
-import javax.persistence.CascadeType
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.OneToMany
+import javax.persistence.*
 
 @Entity
-class Member(
+data class Member(
     @Id
-    val id: Long,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long = 0L,
 
     val nickname: String,
 
     @OneToMany(mappedBy = "member", cascade = [CascadeType.ALL])
-    val memberInterest: List<MemberInterest> = listOf()
+    var memberInterest: List<MemberInterest> = listOf()
 )

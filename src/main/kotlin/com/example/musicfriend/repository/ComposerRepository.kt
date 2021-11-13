@@ -1,10 +1,9 @@
 package com.example.musicfriend.repository
 
-import com.example.musicfriend.entity.Interest
+import com.example.musicfriend.entity.Composer
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface InterestRepository : JpaRepository<Interest, Long> {
-    fun findInterestByTitle(title: String): Interest
+interface ComposerRepository : JpaRepository<Composer, Long> {
 }
