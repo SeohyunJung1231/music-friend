@@ -4,6 +4,7 @@ import com.example.musicfriend.entity.Member
 import com.example.musicfriend.repository.MemberRepository
 import com.example.musicfriend.service.MusicMatchingService
 import com.example.musicfriend.service.RegisterService
+import io.swagger.annotations.ApiOperation
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -13,11 +14,13 @@ class MemberController(
     private val registerService: RegisterService,
     private val musicMatchingService: MusicMatchingService
 ) {
+    @ApiOperation(value = "모든 맴버 조회")
     @GetMapping("/all")
     fun getAllMembers(): List<Member> {
         return memberRepository.findAll()
     }
 
+    @ApiOperation(value = "맴버 등록")
     @GetMapping
     fun register(
         @RequestParam(required = true) name: String,
@@ -26,6 +29,7 @@ class MemberController(
         registerService.register(name, interest)
     }
 
+    @ApiOperation(value = "맴버의 곡 추천 링크 조회")
     @GetMapping("/{name}")
     fun findMusicForMember(
         @PathVariable name: String
